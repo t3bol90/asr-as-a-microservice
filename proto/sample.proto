@@ -1,0 +1,20 @@
+syntax = "proto3";
+package SamplePackage;
+
+message EntryCreateRequest {
+    string title = 1;
+    string code = 2;
+    string description = 3;
+}
+
+message EntryResponse {
+    string id = 1;
+    string title = 2;
+    string code = 3;
+    string description = 4;
+    int32 created_on = 6;
+}
+
+service SampleService {
+    rpc createBulkEntries(stream EntryCreateRequest) returns (stream EntryResponse) {}
+}
