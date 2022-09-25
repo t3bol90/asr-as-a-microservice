@@ -1,0 +1,14 @@
+INFO:ASRServicer:ASRServicer initializaiton finised
+INFO:ASRServicer:Send chunk to worker
+INFO:ASRServicer:Reply {'status': 1, 'msg': '', 'id': 'f558a864-13fe-4074-aec5-30841b6b6355', 'result': {'transcript': '', 'final': False}}
+INFO:ASRServicer:Send chunk to worker
+INFO:ASRServicer:Reply {'status': 1, 'msg': '', 'id': '693def4f-6366-49fa-94df-58818811d5d6', 'result': {'transcript': '', 'final': False}}
+INFO:ASRServicer:Send chunk to worker
+INFO:ASRServicer:Reply {'status': 1, 'msg': '', 'id': '973c08ad-ff4f-486b-818a-1c907cc1f3db', 'result': {'transcript': 'several tor', 'final': False}}
+INFO:ASRServicer:Send chunk to worker
+INFO:ASRServicer:Reply {'status': 1, 'msg': '', 'id': '7a172962-762d-4953-ba33-e152e2a41e83', 'result': {'transcript': 'several tor', 'final': False}}
+INFO:ASRServicer:Send chunk to worker
+INFO:ASRServicer:Reply {'status': 1, 'msg': '', 'id': '2c8c4724-596d-4186-b613-a5896c691d28', 'result': {'transcript': 'several tornadoes touched down', 'final': False}}
+INFO:ASRServicer:Send chunk to worker
+INFO:ASRServicer:Reply {'status': 1, 'msg': '', 'id': '863a4f96-0b19-45bf-bce8-05894eaf4c2e', 'result': {'transcript': 'several tornadoes touched down', 'final': False}}
+INFO:ASRServicer:Reply {'status': 1, 'msg': 'MS_CODE', 'id': 'f224587e-abc3-48e2-a33e-644c966ab805', 'result': {'transcript': '', 'final': True}}

@@ -1,8 +1,12 @@
 
-## How to run
+## Enviroments
 
 ```bash
 sudo apt-get install python3-pip
+```
+
+```bash
+sudo apt install portaudio19-dev
 ```
 
 ```py3
@@ -10,21 +14,34 @@ conda create -n wenet python=3.8
 ```
 
 ```py3
+conda activate wenet
+```
+
+
+```py3
 pip install -r requirement.txt
 ```
 
-Pyaudio cho người trầm cảm
+## Run
+
+```py3
+python server.py
 ```
-sudo apt install portaudio19-dev
+
+```py3
+python client.py
 ```
 
-### How to test?
+## Rebuild protobuff (in need)
+```bash
+cd proto
+```
+```bash
+chmod +x build-protoc.sh
+```
+```bash
+./build-protoc.sh
+```
 
-> Idk :)
 
-## TODO:
 
-- [ ] Write .proto file to define the gRPC services and messages.
-- [ ] Write a server to process the submitted chunks audio and returns back the response texts.
-- [ ] Write a client to talk to the server.
-- [ ] Write/use a scheduler/tools to perform stress test for connection.
