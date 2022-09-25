@@ -5,15 +5,13 @@ from proto import asr_pb2_grpc, asr_pb2
 # non-ref
 import pyaudio
 
-
-
 from multiprocessing import Queue
 
 import sys
 import time
 # Loot dạo từ để có tri thức nghiệp vụ: https://viettelgroup.ai/document/grpc 
 
-CHUNK = 8000    # Length of bytebuff
+CHUNK = 1600    # Length of bytebuff
 CHANNELS = 1    # Number channel of audio
 RATE = 16000    # Sample rate of audio (Hz)
 
@@ -55,7 +53,7 @@ def read_block():
 
 
 def run():
-    metadata = [('channels', str(CHANNELS)), ('rate', str(RATE)), ('single_sentence', str(SINGLE_SENTENCE)), ('token', 'test_token'), ('id', 'test_id')]
+    metadata = [('channels', str(CHANNELS)), ('rate', str(RATE)), ('token', 'test_token'), ('id', 'test_id')]
     channel = grpc.insecure_channel(target=URI)
     stub = asr_pb2_grpc.ASRStub(channel=channel)
     try:

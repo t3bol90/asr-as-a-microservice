@@ -28,12 +28,12 @@ from collections import deque
 
 RESPONSIVE_TIMEOUT = 1000  # milisec
 CLIENT_ROUNTINE = 100  # milisec
-INACTIVE_THRES = 2000
 
 
-CHUNK = 8000    # Length of bytebuff
+CHUNK = 1600    # Length of bytebuff
 CHANNELS = 1    # Number channel of audio
 RATE = 16000    # Sample rate of audio (Hz)
+INACTIVE_THRES = 2000
 
 QUEUE_SIZES = 1
 SLEEP_DELAY = 0.001
@@ -54,9 +54,6 @@ class ASRServicer(asr_pb2_grpc.ASRServicer):
 
         for asr_response in asr_response_iterator:
             responseQueue.put(asr_response)
-            # time.sleep(SLEEP_DELAY)
-
-        # logger.info('merge thread complete')
         return
 
 
@@ -65,7 +62,7 @@ class ASRServicer(asr_pb2_grpc.ASRServicer):
         Request interator handler
         '''
         counter = 0
-        pref_chunks = (RESPONSIVE_TIMEOUT//CLIENT_ROUNTINE)//2
+        pref_chunks = (RESPONSIVE_TIMEOUT//CLIENT_ROUNTINE)*10
         final = False
         responseQueue = Queue()
         inputQueue = Queue()
@@ -117,9 +114,7 @@ class ASRServicer(asr_pb2_grpc.ASRServicer):
                 }
 
                 try:                
-                # stream the response back
                     logger.info(f"Reply {text_reply}")
-
                     yield asr_pb2.TextReply(**text_reply)
 
                 except:
