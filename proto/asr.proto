@@ -1,0 +1,22 @@
+syntax = "proto3";
+package zalotest.asr;
+
+message VoiceRequest {
+    bytes byte_buff = 1;
+}
+
+message Result {
+    bool final = 1;
+    string transcript = 2;
+}
+
+message TextReply {
+    int32 status = 1;
+    string msg = 2;
+    string id = 3;
+    Result result = 4;
+}
+
+service ASR {
+    rpc workerSpeechToText (stream VoiceRequest) returns (stream TextReply) {}
+}
